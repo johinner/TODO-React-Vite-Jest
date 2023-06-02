@@ -3,10 +3,13 @@ import { useContext } from "react";
 import { UserContext } from "./context/UserContext";
 
 
+
 export const TodoFiltros = () => {
 
  const {manejarSelecFilter} = useContext(UserContext)
 const {selectOpcion, manejarSeleccion1, manejarSeleccion2} = manejarSelecFilter
+
+
 
   return (
     <div className="row m-1 p-3 px-5 justify-content-end">

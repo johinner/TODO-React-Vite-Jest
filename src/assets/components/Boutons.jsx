@@ -1,8 +1,7 @@
 
-export const Boutons = ({ id, eliminarTodo}) => {
- const modeEdit = (id) => {
-  console.log(id)
- }
+export const Boutons = ({ id, eliminarTodo, modeEdit}) => {
+    
+ const btnEdit = () => modeEdit()
 
   return (
     <>
@@ -14,7 +13,7 @@ export const Boutons = ({ id, eliminarTodo}) => {
               data-toggle="tooltip"
               data-placement="bottom"
               title="Edit todo"
-              onClick={() => modeEdit(id) }
+              onClick={() => btnEdit() }
             ></i>
           </h5>
           <h5 className="m-0 p-0 px-2">
@@ -37,7 +36,7 @@ export const Boutons = ({ id, eliminarTodo}) => {
               data-original-title="Created date"
             ></i>
             <label className="date-label my-2 text-black-50">
-              28th Jun 2020
+            fechaDeCreaccion
             </label>
           </div>
         </div>

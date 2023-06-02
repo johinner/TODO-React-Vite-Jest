@@ -4,7 +4,7 @@ import { TodoItemList } from "./TodoItemList"
 import { UserContext } from "./context/UserContext"
 import { todoActionFilter } from "../hook/todoFilter"
 
-export const TodoList = ({todos, funcionEliminarTodo, funcionMarcarTodo, modeEdit}) => {
+export const TodoList = ({todos, funcionEliminarTodo, funcionMarcarTodo, funcionEditarTodo}) => {
 
     const {manejarSelecFilter}= useContext(UserContext)
     const {selectOpcion} = manejarSelecFilter;
@@ -19,7 +19,7 @@ export const TodoList = ({todos, funcionEliminarTodo, funcionMarcarTodo, modeEdi
                         todo={todo}
                         eliminarTodo={funcionEliminarTodo}
                         marcarTodo={funcionMarcarTodo}
-                        modeEdit={modeEdit} />
+                        funcionEditarTodo={funcionEditarTodo} />
                 ))
             }
         </div>

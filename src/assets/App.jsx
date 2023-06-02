@@ -9,7 +9,7 @@ import { UserProvider } from './context/UserProvider';
 
 export const App = () => {
 
-  const {todos, manejarNuevoTodo, EliminarTodo, marcarTodo } = useTodos();
+  const {todos, manejarNuevoTodo, EliminarTodo, marcarTodo, editarTodo } = useTodos();
 
   return (
     <UserProvider>
@@ -34,6 +34,7 @@ export const App = () => {
           todos={todos}
           funcionEliminarTodo={EliminarTodo}
           funcionMarcarTodo={marcarTodo}
+          funcionEditarTodo={editarTodo}
           />
       </div>
     </div>

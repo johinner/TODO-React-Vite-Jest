@@ -7,13 +7,14 @@ export const todoAcciones = (inicialState, action) => {
       return inicialState.filter((todo) => todo.id !== action.payload);
 
     case "[TODO] Edit Todo":
-      return inicialState.map((todo) => {
+       return inicialState.map((todo) => {
         if (todo.id === action.payload.id) {
           return {
             ...todo,
             description: action.payload.description,
           };
         }
+        return todo;
       });
 
     case "[TODO] Toggle Todo":

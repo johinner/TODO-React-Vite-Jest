@@ -6,7 +6,6 @@ export const useForm = (inicialForm = {}) => {
 
     const datoInput = ({target}) => {
         const {name, value} =  target
-
         setFormState({
             ...formState,
             [name]: value

@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { useForm } from "../hook/useForm"
 import { Fecha } from "./Fecha"
 
@@ -9,7 +10,7 @@ export const TodoAdd = ({FuncionAgregarTodo}) => {
     }
 
     const { description, datoInput, vaciarForm } = useForm(valueForm)
-
+    const [expirationDate, setExpirationDate] = useState(null)
 
     const envioInfoForm = (e) => {
         e.preventDefault()
@@ -20,7 +21,7 @@ export const TodoAdd = ({FuncionAgregarTodo}) => {
             description,
             done: false,
             creationDate: new Date(),
-            expirationDate: ''
+            expirationDate
             
         }
         FuncionAgregarTodo(nuevoTodo)
@@ -54,7 +55,7 @@ export const TodoAdd = ({FuncionAgregarTodo}) => {
                   data-placement="bottom"
                   title="Establecer una fecha de vencimiento"
                 ></i>
-                <Fecha className={"fa text-primary custom-select custom-select-sm"}/>
+                <Fecha className={"fa text-primary custom-select custom-select-sm"} obtenerDate={setExpirationDate}/>
                 <i
                   className="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none"
                   data-toggle="tooltip"
